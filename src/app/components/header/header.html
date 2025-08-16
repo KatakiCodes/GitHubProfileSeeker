@@ -1,0 +1,13 @@
+<header class="py-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <p class="lead text-center">Search for GitHub profiles and view their details.</p>
+            <form [formGroup]="formRquest" action="#" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-sm text-bg-dark" placeholder="Username" id="username" name="username" formControlName = "username">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="btn-seek" (click)="emitEvent()">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
