@@ -9,7 +9,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './header.css'
 })
 export class Header {
-  @Output() eventEmitter: EventEmitter<string> = new EventEmitter();
+  @Output() eventEmitter: EventEmitter<string> = new EventEmitter<string>();
 
   formRquest = new FormGroup({
     username: new FormControl('',Validators.required)

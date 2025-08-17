@@ -1,4 +1,23 @@
 <div class="container mx-auto">
-    <app-header (eventEmitter)="testeheaderOutput($event)"></app-header>
-    <app-user-card></app-user-card>
+    <app-header (eventEmitter)="getUser($event)"></app-header>
+    <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple"
+        [fullScreen]="true">
+    </ngx-spinner>
+    @if(userResult){
+        <app-user-card [user]="userResult"></app-user-card>
+    }
+    @else if(!userResult && messageResult != ''){
+        <div class="text-center mt-5">
+            <p class="text-gray">{{ messageResult }}</p>
+        </div>
+    }
+    @else{
+        <div class="text-center mt-5">
+            <p class="text-gray">Please enter a GitHub username</p>
+        </div>
+    }
 </div>
